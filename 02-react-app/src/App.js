@@ -8,7 +8,7 @@ function App() {
   const [startCam, setStartCam] = useState(false);
   const [model, setModel] = useState();
   const threshold = 0.75;
-  const modelURL = "http://127.0.0.1:8080/plants_mobilenetv2_640/model.json";
+  const modelURL = "http://127.0.0.1:8080/tfjs_plants_mobilenetv2_640/model.json";
   const classesDir = {
     1: {
       name: 'Seerosenblatt',
