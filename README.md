@@ -5,5 +5,5 @@
 - Führe die folgende Eingabe aus, um das Modell über http://127.0.0.1:8080 erreichbar zu machen:
     - <code>http-server -c1 --cors .</code>
 ## react Anwendung starten
-<code>npm i</code>
-<code>npm start</code>
+- <code>npm i</code>
+- <code>npm start</code>
