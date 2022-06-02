@@ -9,7 +9,7 @@ function App() {
   const [model, setModel] = useState();
   const [predictions, setPredictions] = useState([]);
   const schwelle = 0.75;
-  const modelURL = "http://127.0.0.1:8080/model.json";
+  const modelURL = "https://raw.githubusercontent.com/mirzagaev/bildbasierte-erkennung/master/00-model/model.json";
   const classesDir = {
     1: {
       name: 'Seerosenblatt',
