@@ -99,12 +99,12 @@ function App() {
       { model && (
       <>
         <>
-          <div className="relative">
+          <div className="container relative m-auto">
             { startCam && (
               <Webcam
                 audio={false}
                 ref={webcamRef}
-                className="w-auto mx-auto"
+                className="w-full"
                 screenshotFormat="image/jpeg"
                 videoConstraints={{
                   width: 1280,
