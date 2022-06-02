@@ -1,8 +1,8 @@
 ## Modell-Server starten
-- <code>npm install http-server -g</code>
-- Inside the directory "01-machine-learning-models/", one can run the following command to launch the server:
+- Starte neue Eingabeaufforderung (cmd) im Verzeichnis "01-machine-learning-models/" und instaliere http-server:
+    - <code>npm install http-server -g</code>
+- Führe die folgende Eingabe aus, um das Modell über http://127.0.0.1:8080 erreichbar zu machen:
     - <code>http-server -c1 --cors .</code>
-- http://localhost:8080/model.pb
 
 ## react Anwendung starten
 <code>npm i<br/>

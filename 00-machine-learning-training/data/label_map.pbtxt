@@ -1,0 +1,12 @@
+item {
+    id: 1
+    name: 'Seerosenblatt'
+}
+item {
+    id: 2
+    name: 'Magnolienblatt'
+}
+item {
+    id: 3
+    name: 'Laub'
+}
