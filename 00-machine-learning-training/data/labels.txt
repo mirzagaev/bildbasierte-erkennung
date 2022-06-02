@@ -1,5 +1,0 @@
-__ignore__
-_background_
-Seerosenblatt
-Magnolienblatt
-Laub
