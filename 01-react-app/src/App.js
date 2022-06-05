@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Webcam from "react-webcam";
 import * as tf from '@tensorflow/tfjs';
 import './App.scss';
@@ -10,7 +10,7 @@ function App() {
   const [predictions, setPredictions] = useState([]);
   const schwelle = 0.75;
   const modelURL = "https://raw.githubusercontent.com/mirzagaev/bildbasierte-erkennung/master/00-model/model.json";
-  const classesDir = {
+  const Klassifizierungen = {
     1: {
       name: 'Seerosenblatt',
       id: 1,
@@ -56,7 +56,7 @@ function App() {
   const renderDetections = (detections) => {
     setPredictions([]);
     const predicted_index = detections[0].as1D().argMax().dataSync()[0];
-    const predictedClass = classesDir[predicted_index];
+    const predictedClass = Klassifizierungen[predicted_index];
     const score = detections[1].dataSync()[0];
     const confidence = Math.round(score * 100);
     // const count = detections[5].dataSync()[0];
@@ -148,8 +148,8 @@ function App() {
         </>
         { !startCam && (
         <>
-          <section className="container mx-auto bg-white" >
-            <div id="startInfo" className="container p-20 mx-auto text-center" >
+          <section className="container mx-auto bg-white">
+            <div id="startInfo" className="container p-20 mx-auto text-center">
               <p id="loadingInfo" >Komponenten sind geladen, Sie können die Anwendung starten. </p>
             </div>
           </section>
@@ -167,7 +167,7 @@ function App() {
       { !model && (
       <section className="container mx-auto bg-white" >
         <div id="startInfo" className="container p-20 mx-auto text-center" >
-          <p id="loadingInfo" > Komponenten werden geladen, einen kurzen Augenblick...</p>
+          <p id="loadingInfo">Komponenten werden geladen, einen kurzen Augenblick...</p>
         </div>
       </section>
       )}
