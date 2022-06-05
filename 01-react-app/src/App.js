@@ -10,6 +10,7 @@ function App() {
   const [predictions, setPredictions] = useState([]);
   const schwelle = 0.75;
   const modelURL = "https://raw.githubusercontent.com/mirzagaev/bildbasierte-erkennung/master/00-model/model.json";
+  // const modelURL = "http://127.0.0.1:8080/tfjs-polygon-ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/model.json";
   const Klassifizierungen = {
     1: {
       name: 'Seerosenblatt',
@@ -55,12 +56,12 @@ function App() {
 
   const renderDetections = (detections) => {
     setPredictions([]);
-    const predicted_index = detections[0].as1D().argMax().dataSync()[0];
+    const predicted_index = detections[2].as1D().argMax().dataSync()[0];    // bei Bbox detections[0]
     const predictedClass = Klassifizierungen[predicted_index];
-    const score = detections[1].dataSync()[0];
+    const score = detections[1].dataSync()[0];    // bei Bbox detections[1]
     const confidence = Math.round(score * 100);
     // const count = detections[5].dataSync()[0];
-    const boxes = detections[7].arraySync();
+    const boxes = detections[5].arraySync();    // bei Bbox detections[7]
 
     const media = webcamRef?.current?.video;
     const videoWidth = media.offsetWidth;
